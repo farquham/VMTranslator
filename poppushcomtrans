@@ -1,0 +1,33 @@
+push
+constant is different from rest
+
+rest (push onto stack)
+@index //get address of value to retrieve
+D=A
+@segment
+A=M+D
+D=M // retrieve value
+@SP // send value to top of stack
+A=M
+M=D
+@SP
+M=M+1
+
+
+pop (constant not used with this) (pop off stack)
+rest
+@index //get address to send value too
+D=A
+@segment
+D=M+D
+@R13
+M=D
+@SP //get value to store in segment
+M=M-1
+A=M
+D=M
+@R13 // retrieve address and store value
+A=M
+M=D
+
+
